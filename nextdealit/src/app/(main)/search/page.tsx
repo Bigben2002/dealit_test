@@ -1,21 +1,21 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import { 
-  ChevronLeft, 
-  Check, 
-  ChevronRight, 
-  User, 
-  Camera, 
-  Search, 
-  Home, 
-  PlusCircle, 
-  MessageCircle, 
-  Heart, 
-  Bell, 
-  Filter, 
+import React, { useState, useEffect } from "react";
+import {
+  ChevronLeft,
+  Check,
+  ChevronRight,
+  User,
+  Camera,
+  Search,
+  Home,
+  PlusCircle,
+  MessageCircle,
+  Heart,
+  Bell,
+  Filter,
   Settings,
-  MoreVertical, 
-  Send, 
+  MoreVertical,
+  Send,
   Star,
   Clock,
   ArrowUpRight,
@@ -29,14 +29,27 @@ import {
   Menu,
   ShoppingBag,
   Store,
-  Receipt
-} from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+  Receipt,
+} from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 
-import { Screen, Tab } from '../../../types/index';
-import { ExploreIcon } from '../../../components/common/ExploreIcon';
+import { Screen, Tab } from "../../../types/index";
+import { ExploreIcon } from "../../../components/common/ExploreIcon";
 
-export default function SearchScreen({ onBack, onSearch, onSearchDetailClick, onRecentClick, themeColor }: { onBack: () => void; onSearch: (keyword: string) => void; onSearchDetailClick: () => void; onRecentClick: () => void; themeColor: string; key?: string }) {
+export default function SearchScreen({
+  onBack,
+  onSearch,
+  onSearchDetailClick,
+  onRecentClick,
+  themeColor,
+}: {
+  onBack: () => void;
+  onSearch: (keyword: string) => void;
+  onSearchDetailClick: () => void;
+  onRecentClick: () => void;
+  themeColor: string;
+  key?: string;
+}) {
   const categories = [
     { name: "디지털기기", icon: "💻" },
     { name: "생활가전", icon: "📺" },
@@ -53,7 +66,7 @@ export default function SearchScreen({ onBack, onSearch, onSearchDetailClick, on
     { name: "반려동물용품", icon: "🐶" },
     { name: "도서/티켓/음반", icon: "💿" },
     { name: "식물", icon: "🌿" },
-    { name: "기타", icon: "📦" }
+    { name: "기타", icon: "📦" },
   ];
 
   return (
@@ -66,19 +79,28 @@ export default function SearchScreen({ onBack, onSearch, onSearchDetailClick, on
       {/* Header */}
       <div className="h-16 flex items-center px-4 border-b border-gray-50 justify-between sticky top-0 bg-white z-10">
         <div className="flex items-center space-x-1">
-          <button onClick={onBack} className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+          <button
+            onClick={onBack}
+            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+          >
             <ArrowLeft size={24} />
           </button>
           <h1 className="text-xl font-bold">탐색</h1>
         </div>
-        <button onClick={onRecentClick} className="flex items-center space-x-1 text-gray-500 hover:text-gray-800 transition-colors px-2">
+        <button
+          onClick={onRecentClick}
+          className="flex items-center space-x-1 text-gray-500 hover:text-gray-800 transition-colors px-2"
+        >
           <span className="text-sm font-medium">최근 본 상품</span>
         </button>
       </div>
 
       <div className="flex-1 overflow-y-auto no-scrollbar p-6 space-y-6">
         {/* Search Bar */}
-        <div className="h-12 bg-gray-50 rounded-xl flex items-center px-4 space-x-3 cursor-pointer" onClick={onSearchDetailClick}>
+        <div
+          className="h-12 bg-gray-50 rounded-xl flex items-center px-4 space-x-3 cursor-pointer"
+          onClick={onSearchDetailClick}
+        >
           <Search size={20} className="text-gray-400" />
           <span className="text-gray-400 text-sm">검색어를 입력해 주세요.</span>
         </div>
