@@ -110,8 +110,8 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white flex justify-center items-center py-10 px-4 font-sans text-[#141414]">
-      <div className="w-full max-w-[390px] h-[844px] bg-white rounded-[40px] shadow-2xl overflow-hidden border-8 border-black relative flex flex-col shrink-0">
+    <div className="min-h-dvh bg-white flex justify-center font-sans text-[#141414]">
+      <div className="w-full max-w-[430px] min-h-dvh bg-white overflow-hidden relative flex flex-col">
         <AnimatePresence mode="wait">
           {currentScreen === 'login' && (
             <LoginScreen key="login" showToast={showToast} onNavigateSignup={() => navigateTo('signup')} onNavigateFindId={() => navigateTo('find_id')} onNavigateFindPassword={() => navigateTo('find_password')} onLogin={() => navigateTo('main')} />
